@@ -47,7 +47,7 @@ kind: ClusterRole
 metadata:
   name: devopsdude-role
 rules:
-- apiGroups: ["", "extensions", "apps"]
+- apiGroups: [""]
   resources: ["nodes", "pods", "replicationcontrollers", "deployments", "statefulsets", "services", "configmaps", "secrets"]
   verbs: ["get", "watch", "list", "create", "update", "patch"]
 
