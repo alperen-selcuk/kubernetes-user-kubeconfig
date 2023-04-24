@@ -48,7 +48,7 @@ metadata:
   name: devopsdude-role
 rules:
 - apiGroups: ["", "extensions", "apps"]
-  resources: ["pods", "replicationcontrollers", "deployments", "statefulsets", "services", "configmaps", "secrets"]
+  resources: ["nodes", "pods", "replicationcontrollers", "deployments", "statefulsets", "services", "configmaps", "secrets"]
   verbs: ["get", "watch", "list", "create", "update", "patch"]
 
 ```
