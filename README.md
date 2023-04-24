@@ -38,3 +38,34 @@ kubectl config view --minify --flatten > devopsdude.kubeconfig
 ```
 
 # kubernetes-user-RBAC
+
+cluster-role
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: devopsdude-role
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["pods", "replicationcontrollers", "deployments", "statefulsets", "services", "configmaps", "secrets"]
+  verbs: ["get", "watch", "list", "create", "update", "patch"]
+
+```
+
+cluster-rolebinding
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: devopsdude-clusterbinding
+subjects:
+- kind: User
+  name: devopsdude
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: devopsdude-role
+  apiGroup: rbac.authorization.k8s.io
+```
