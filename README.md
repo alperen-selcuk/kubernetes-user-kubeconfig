@@ -10,7 +10,7 @@ openssl genrsa -out devopsdude.key 2048
 
 key oluşturduktan sonra bu key ile csr oluşturacağız.
 ```
-openssl req -new -key devopsdude.key -out devopsdude.csr -subj "/CN=user"
+openssl req -new -key devopsdude.key -out devopsdude.csr -subj "/CN=devopsdude"
 ```
 
 en sonunda kubernetes clusterımızın ca.crt ve ca.key ile birlikte bu oluşturdugumuz csr i kullanarak crt oluşturacapız. kubernetes ca sertifikaları /etc/kubernetes/pki altında olur.
