@@ -69,3 +69,12 @@ roleRef:
   name: devopsdude-role
   apiGroup: rbac.authorization.k8s.io
 ```
+
+
+# check-RBAC-permission
+
+verdiğiniz role u denemeden önce api ye sorabilirsiniz. mesela ingress görebiliyor muyum ya da pod silebiliyor muyum diye sorabilirsiniz.
+
+```
+kubectl auth can-i get ingress
+kubectl auth can-i delete pods
